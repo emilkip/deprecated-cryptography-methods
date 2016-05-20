@@ -1,0 +1,37 @@
+doctype html
+html(class='no-js')
+	head
+		meta(charset='utf-8')
+		meta(http-equiv='X-UA-Compatible', content='IE=edge')
+
+		title Encrypt
+
+		meta(name='description', content='')
+		meta(name='viewport', content='width=device-width, initial-scale=1')
+
+		link(rel='stylesheet', href='/vendor/bootstrap/dist/css/bootstrap.min.css')
+
+	body
+
+		.container
+			.row
+				.col-md-6.col-md-offset-3
+					h1 Encryption methods
+			hr
+			.row
+				.col-md-6.col-md-offset-3
+					.list-group
+						a(href="/ceasar").list-group-item
+							h3 Ceasar cipher
+						a(href="/mono_alphabet").list-group-item
+							h3 Monoalphabetic cipher
+						a(href="/tritemius").list-group-item
+							h3 Trithemius cipher
+						a(href="/veg").list-group-item
+							h3 Vigenere cipher
+						a(href="/playfair").list-group-item
+							h3 Playfair cipher
+						a(href="/hill").list-group-item
+							h3 Hill cipher
+						a(href="graph_tools").list-group-item
+							h3 Graph tool

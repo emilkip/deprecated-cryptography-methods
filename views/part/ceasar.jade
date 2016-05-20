@@ -1,0 +1,100 @@
+doctype html
+html(class='no-js')
+	head
+		meta(charset='utf-8')
+		meta(http-equiv='X-UA-Compatible', content='IE=edge')
+
+		title Ceasar cipher
+
+		meta(name='description', content='')
+		meta(name='viewport', content='width=device-width, initial-scale=1')
+
+		link(rel='stylesheet', href='vendor/bootstrap/dist/css/bootstrap.min.css')
+
+	body
+
+		.container
+			ul.nav.nav-pills
+				li
+					a(href="/") Main
+				li
+					a(href="/mono_alphabet") Monoalphabet
+				li
+					a(href="/tritemius") Trithemius
+
+			h1 Ceasar cipher
+			hr
+			.row
+				.col-md-6
+					h3 Encrypt
+					.form-group
+						textarea#crypt-string.form-control(rows='15', placeholder='Enter your string')
+					.form-group
+						.input-group
+							.input-group-addon Key
+							input#crypt-key.form-control(type='text', placeholder='Enter your key')
+					.form-group
+						.btn-group.btn-group-md(role="group")
+							button#crypt.btn.btn-primary Encrypt
+							button#crypt-fd.btn.btn-default(data-toggle="modal" data-target=".alphabet-modal") Frequency dictionary
+					.well
+						strong Encrypted result: 
+						pre#crypt-result
+
+				.col-md-6.col-offset-md-6
+					h3 Decrypt
+					.form-group
+						textarea#decrypt-string.form-control(rows='15', placeholder='Enter your crypted string')
+					.form-group
+						.input-group
+							.input-group-addon Key
+							input#decrypt-key.form-control(type='text', placeholder='Enter your key')
+					.form-group
+						.row
+							.col-sm-6
+								.btn-group.btn-group-md(role="group")
+									button#decrypt.btn.btn-primary Decrypt
+									button#decrypt-fd.btn.btn-default(data-toggle="modal" data-target=".alphabet-modal") Frequency dictionary
+							.col-sm-6
+								.row
+									.col-sm-5
+										button#check-key.btn.btn-default Check key
+									.col-sm-7
+										h4#true-key
+
+					.well
+						strong Decrypted result: 
+						pre#decrypt-result
+
+		.modal.fade.alphabet-modal(tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel")
+			.modal-dialog.modal-md
+				.modal-content
+					.modal-header
+						button(type="button" class="close" data-dismiss="modal" aria-label="Close")
+							span(aria-hidden="true") ×
+						h2 Frequency dictionary
+					.modal-body
+						.row
+							.col-md-7
+								h4 Crypt text frequency
+								table.table.table-bordered
+									thead
+										tr
+											th Sym.
+											th Quan.
+											th Freq.
+									tbody(id="symbol")
+
+							.col-md-5
+								h4 Language frequency
+								table.table.table-bordered
+									thead
+										tr
+											th Alph. sym.
+											th Alph. freq.
+									tbody(id="alphSymbol")
+
+
+		script(src='/vendor/jquery/dist/jquery.min.js')
+		script(src='/vendor/bootstrap/dist/js/bootstrap.min.js')
+		script(src='/js/ceasar.js')

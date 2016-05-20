@@ -1,0 +1,21 @@
+{
+  "name": "lab1",
+  "version": "0.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node ./server"
+  },
+  "author": "",
+  "license": "BSD-2-Clause",
+  "dependencies": {
+    "blueimp-file-upload-node": "^2.1.0",
+    "body-parser": "~1.14.1",
+    "cookie-parser": "~1.4.0",
+    "debug": "~2.2.0",
+    "express": "~4.13.3",
+    "jade": "~1.11.0",
+    "lodash": "~3.10.1",
+    "morgan": "~1.6.1"
+  }
+}

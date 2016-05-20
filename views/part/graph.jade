@@ -1,0 +1,43 @@
+doctype html
+html(class='no-js')
+	head
+		meta(charset='utf-8')
+		meta(http-equiv='X-UA-Compatible', content='IE=edge')
+
+		title Graph tool
+
+		meta(name='description', content='')
+		meta(name='viewport', content='width=device-width, initial-scale=1')
+
+		link(rel='stylesheet', href='vendor/bootstrap/dist/css/bootstrap.min.css')
+
+	body
+
+		.container
+			ul.nav.nav-pills
+				li
+					a(href="/") Main
+
+
+			h1 Graph tool
+			hr
+			#graph-cont
+
+			hr
+
+			.form-group
+				.input-group
+					.input-group-addon JSON hash
+					.row
+						.col-md-8
+							input#hash.form-control(type='text', placeholder='Enter text hash')
+						.col-md-4
+							input#title.form-control(type='text', placeholder='Enter title')
+			.form-group
+				button#draw-btn.btn.btn-primary Draw
+
+
+		script(src='/vendor/jquery/dist/jquery.min.js')
+		script(src="/vendor/bootstrap/dist/js/bootstrap.min.js")
+		script(src="/vendor/Chart.js/Chart.min.js")
+		script(src='/js/graph.js')

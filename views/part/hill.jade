@@ -1,0 +1,113 @@
+doctype html
+html(class='no-js')
+	head
+		meta(charset='utf-8')
+		meta(http-equiv='X-UA-Compatible', content='IE=edge')
+
+		title Hill cipher
+
+		meta(name='description', content='')
+		meta(name='viewport', content='width=device-width, initial-scale=1')
+
+		link(rel='stylesheet', href='vendor/bootstrap/dist/css/bootstrap.min.css')
+
+		style.
+			#matrix-form input {
+				width: 100%;
+			}
+
+	body
+
+		.container
+			ul.nav.nav-pills
+				li
+					a(href="/") Main
+
+			h1 Hill cipher
+			hr
+			.row
+				.col-md-6
+					h3 Encrypt
+					.form-group
+						textarea#crypt-string.form-control(rows='15', placeholder='Enter your string')
+					.form-group
+						.input-group
+							.input-group-addon Size
+							input#matrix-size.form-control(type='text', placeholder='Enter size')
+					.row
+						.col-md-6
+							.form-group
+								.btn-group.btn-group-md(role="group")
+									button#crypt.btn.btn-primary Encrypt
+									button#generate.btn.btn-default Generate key
+									//button#crypt-fd.btn.btn-default(data-toggle="modal" data-target=".alphabet-modal") Frequency dictionary
+						.col-md-6
+							.well#key-place
+
+					hr
+					.well
+						strong Encrypted result: 
+						pre#crypt-result
+
+				.col-md-6.col-offset-md-6
+					h3 Decrypt
+					.form-group
+						textarea#decrypt-string.form-control(rows='15', placeholder='Enter your crypted string')
+					.form-group
+						.row
+							.col-md-9
+								.input-group
+									.input-group-addon Size
+									input#matrix-decrypt-size.form-control(type='text', placeholder='Enter size')
+							.col-md-3
+								button#show-matrix-form.btn.btn-default Show form
+					.form-group
+						.row
+							.col-md-6
+								#matrix-form.well.clearfix
+
+							.col-md-6
+								#decrypt-key.well
+									h4 Cryptanalysis
+									.form-group
+										.row
+											.col-sm-10
+												input#part-open.form-control(type='text', placeholder='Part of open text')
+											.col-sm-2
+												#part-open-count
+									.form-group
+										.row
+											.col-sm-10
+												input#part-closed.form-control(type='text', placeholder='Part of closed text')
+											.col-sm-2
+												#part-closed-count
+									.form-group
+										.row
+											.col-sm-6
+												button#get-key.btn.btn-success Find key
+											.col-sm-6
+												#found-Key
+
+					.form-group
+						.row
+							.col-sm-6
+								.btn-group.btn-group-md(role="group")
+									button#decrypt.btn.btn-primary Decrypt
+									//button#decrypt-fd.btn.btn-default(data-toggle="modal" data-target=".alphabet-modal") Frequency dictionary
+							//.col-sm-6
+								.row
+									.col-sm-5
+										button#check-key.btn.btn-default Check key
+									.col-sm-7
+										h4#true-key
+
+					.well
+						strong Decrypted result: 
+						pre#decrypt-result
+
+
+
+		script(src='/vendor/jquery/dist/jquery.min.js')
+		script(src='/vendor/sylvester.js')
+		script(src='/vendor/bootstrap/dist/js/bootstrap.min.js')
+		script(src='/js/hill.js')
