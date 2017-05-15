@@ -1,6 +1,6 @@
 # Deprecated cryptography methods
 
-####Some old encryption methods on javascript
+#### Some old encryption methods on javascript
 
 * Caesar cipher
 * Trithemius cipher
